@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<Domain.Client>
+@{
+
+<h2>Список клиентов</h2>
+<p>
+    <a asp-action="Create">Добавить клиента</a>
+</p>
+<table>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Телефон</th>
+        <th>Email</th>
+        <th>Действия</th>
+        </tr>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.LName</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Email</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удалить</a>
+                    </td>
+                </tr>
+            }
+        }
+</table>
+
+}

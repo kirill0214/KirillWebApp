@@ -1,0 +1,22 @@
+﻿@model Domain.Client
+
+<h2>Детали</h2>
+<div>
+    <label>Имя:</label>
+    <span>@Model.Name</span><br />
+
+    <label>Фамилия:</label>
+    <span>@Model.LName</span><br />
+
+    <label>Телефон:</label>
+    <span>@Model.Phone</span><br />
+
+    <label>Email:</label>
+    <span>@Model.Email</span><br />
+
+    <form asp-action="Index">
+        <button type="submit">Вернуться</button>
+    </form>
+</div>
+
+
