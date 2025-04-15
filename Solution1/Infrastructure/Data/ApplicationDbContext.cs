@@ -11,4 +11,6 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>, IApplicatio
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
     public DbSet<Client> Clients { get; set; }
+
+    public DbSet<Registration> Registrations { get; set; }
 }

@@ -1,0 +1,31 @@
+﻿@model Domain.Registration
+
+<h2> Добавить регистрацию</h2>
+
+<form asp-action="Create" method="post" class="mt-4">
+    <div class="form-group">
+        <label asp-for="Date" class="control-label">Дата</label>
+        <input asp-for="Date" class="form-control" type="date" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Time" class="control-label">Время</label>
+        <input asp-for="Time" class="form-control" type="time" />
+        <span asp-validation-for="Time" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientId" class="control-label">Клиент</label>
+        <select asp-for="ClientId" class="form-control" asp-items="@ViewBag.Clients">
+            <option value="">-- выберите клиента --</option>
+        </select>
+        <span asp-validation-for="ClientId" class="text-danger"></span>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-action="Index" class="btn btn-secondary">Отмена</a>
+</form>
+
+

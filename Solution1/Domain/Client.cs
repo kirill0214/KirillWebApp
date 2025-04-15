@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Domain
 {
@@ -13,6 +14,9 @@ namespace Domain
         public string LName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+
+
+        public string FullName => $"{LName} {Name}";
     }
 }
 
